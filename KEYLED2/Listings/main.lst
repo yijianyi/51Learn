@@ -1,0 +1,56 @@
+C51 COMPILER V9.54   MAIN                                                                  03/31/2023 18:18:52 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: E:\51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst)
+                    - OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <STC89C5xRC.H>
+   2          #include <INTRINS.H>
+   3          
+   4          void Delay(unsigned int x)
+   5          {
+   6   1              unsigned char i, j;
+   7   1      
+   8   1              for(;x;x--)
+   9   1              {
+  10   2                      _nop_();
+  11   2                      i = 2;
+  12   2                      j = 199;
+  13   2                      do
+  14   2                      {
+  15   3                              while (--j);
+  16   3                      } while (--i);
+  17   2              }
+  18   1      }
+  19          
+  20          
+  21          void main()
+  22          {
+  23   1              while(1)
+  24   1              {
+  25   2                      if(P31 == 0)
+  26   2                      {
+  27   3                              Delay(20);
+  28   3                              while(P31 == 0);
+  29   3                              P20 = ~P20;
+  30   3                      }
+  31   2              }
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     38    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

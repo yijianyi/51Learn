@@ -1,0 +1,1 @@
+"..\Function\delay\Delay.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(..\Function\delay) DEBUG OBJECTEXTEND PRINT(.\Listings\Delay.lst) OBJECT(.\Objects\Delay.obj)
