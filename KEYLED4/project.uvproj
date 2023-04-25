@@ -371,7 +371,12 @@
             <File>
               <FileName>Delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Function\delay\Delay.c</FilePath>
+              <FilePath>.\Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Delay.h</FilePath>
             </File>
           </Files>
         </Group>
