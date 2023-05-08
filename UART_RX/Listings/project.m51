@@ -1,0 +1,133 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/08/2023  20:43:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\51\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\UART.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZ
+>> E (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\UART.obj (UART)
+  E:\51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0017H     UNIT         ?PR?UART_INIT?UART
+            CODE    001AH     0008H     UNIT         ?PR?_UART_TRANSMIT?UART
+                    0022H     0001H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0042H     UNIT         ?PR?UART_ROUTINE?MAIN
+            CODE    0068H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0074H     0005H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?UART_ROUTINE?MAIN
+  +--> ?PR?_UART_TRANSMIT?UART
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?UART_INIT?UART
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/08/2023  20:43:02  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0026H         PUBLIC        UART_Routine
+  B:0098H.0       PUBLIC        RI
+  C:0074H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  -------         PROC          MAIN
+  C:0074H         LINE#         4
+  C:0074H         LINE#         5
+  C:0074H         LINE#         6
+  C:0077H         LINE#         7
+  C:0077H         LINE#         8
+  C:0077H         LINE#         10
+  -------         ENDPROC       MAIN
+  -------         PROC          UART_ROUTINE
+  C:0026H         LINE#         13
+  C:0043H         LINE#         15
+  C:0046H         LINE#         16
+  C:0046H         LINE#         18
+  C:004BH         LINE#         19
+  C:004DH         LINE#         20
+  C:004DH         LINE#         21
+  -------         ENDPROC       UART_ROUTINE
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  C:0003H         PUBLIC        UART_Init
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  C:001AH         PUBLIC        _UART_Transmit
+  -------         PROC          UART_INIT
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0006H         LINE#         6
+  C:0009H         LINE#         7
+  C:000CH         LINE#         8
+  C:000FH         LINE#         9
+  C:0012H         LINE#         10
+  C:0015H         LINE#         11
+  C:0017H         LINE#         12
+  C:0019H         LINE#         13
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_TRANSMIT
+  D:0007H         SYMBOL        Byte
+  C:001AH         LINE#         29
+  C:001AH         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/08/2023  20:43:02  PAGE 3
+
+
+  C:001AH         LINE#         31
+  C:001CH         LINE#         32
+  C:001FH         LINE#         33
+  C:0021H         LINE#         36
+  -------         ENDPROC       _UART_TRANSMIT
+  -------         ENDMOD        UART
+
+Program Size: data=9.0 xdata=0 code=120
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
